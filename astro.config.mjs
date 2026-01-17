@@ -9,5 +9,8 @@ export default defineConfig({
   site: 'https://osorioadrian.github.io',
   vite: {
     plugins: [tailwindcss()]
+  },
+  redirects: {
+    '/': '/portfolio-adrian/es',
   }
 });
