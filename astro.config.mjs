@@ -10,6 +10,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  trailingSlash: 'always',
   redirects: {
     '/': '/portfolio-adrian/es',
   }
