@@ -1,0 +1,40 @@
+---
+// src/pages/[lang].astro
+import About from "../components/sections/About.astro"
+import Contact from "../components/sections/Contact.astro"
+import Experience from "../components/sections/Experience.astro"
+import Hero from "../components/sections/Hero.astro"
+import Projects from "../components/sections/Projects.astro"
+import Skill from "../components/sections/Skill.astro"
+import { languages } from "../i18n"
+import Layout from "../layouts/Layout.astro"
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const currentLang = lang as keyof typeof languages;
+const t = languages[currentLang];
+---
+
+<Layout lang={currentLang}>
+    <section id="home">
+        <Hero t={t.hero}/>
+    </section>
+    <Skill/>
+    <section id="about">
+        <About about={t.about}/>
+    </section>
+    <Experience experiences={t.experiences} experiencesInfo={t.experiencesInfo}/>
+    <section id="project">
+        <Projects projects={t.projects} projectsInfo={t.projectsInfo}/>
+    </section>
+    <section id="contact">
+        <Contact contact={t.contact}/>
+    </section>
+</Layout>

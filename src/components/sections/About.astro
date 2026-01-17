@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import adrianProfile from '../../assets/images/adrian.png'; 
+import adrianAvatar from '../../assets/images/adrian2.png';
+import avatarIA from '../../assets/icon/IA.png';
+
+interface AboutTexts {
+  title: string
+  subtitle: string
+  cardtitle: string
+  highlights1: string
+  highlights2: string
+}
+
+interface Props {
+  about: AboutTexts
+}
+
+const { about } = Astro.props as Props
+---
+
+<section class="bg-white py-24 px-6 md:px-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+      
+      <div class="flex flex-col gap-12">
+        <div>
+          <h2 class="text-5xl font-medium text-black mb-6">{ about.title }</h2>
+          <p class="text-gray-500 leading-relaxed text-lg max-w-sm">{ about.subtitle }</p>
+        </div>
+        
+        <div class="hidden lg:block">
+          <svg width="180" height="100" viewBox="0 0 180 100" fill="none" class="text-gray-200">
+            <path d="M20 10C20 10 50 80 160 85" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8" />
+            <path d="M150 75L165 85L150 95" stroke="currentColor" stroke-width="2" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="bg-white rounded-4xl p-10 shadow-sm border border-black/5 flex flex-col gap-4 aspect-square justify-center">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">
+              <Image 
+                src={avatarIA} 
+                alt="IA Avatar" 
+                width={208}
+                height={208}
+                class="w-26 h-26 rounded-full grayscale object-cover"
+                format="webp"
+                quality="mid"
+              />
+            </span>
+          </div>
+          <span class="text-7xl font-light text-black">50 %</span>
+          <p class="text-gray-400 text-sm leading-snug">{ about.cardtitle }</p>
+        </div>
+
+        <div class="bg-[#EFEFEF] rounded-4xl p-8 flex items-center gap-4 border border-black/5">
+          <Image 
+            src={adrianAvatar} 
+            alt="Adrian Camilo Osorio - Avatar"
+            width={150} 
+            height={150}
+            class="w-16 h-16 rounded-full grayscale object-cover"
+            format="webp"
+            quality="mid"
+          />
+          <span class="font-medium text-black">Full-stack developer</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-12">
+        <div class="relative group">
+          <div class="overflow-hidden rounded-4xl bg-gray-200">
+            <Image 
+              src={adrianProfile} 
+              alt="Adrian Profile"
+              width={400}
+              height={300}
+              class="w-full grayscale hover:scale-105 transition-transform duration-500"
+              format="webp"
+              quality="mid"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-8">
+          <div class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full bg-black flex items-center justify-center text-white text-xl font-light">
+              +
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed pt-1">{ about.highlights1 }</p>
+          </div>
+          
+          <div class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full bg-black flex items-center justify-center text-white text-xl font-light">
+              +
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed pt-1">{ about.highlights2 }</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

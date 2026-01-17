@@ -1,22 +1,34 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Footer from "../components/layout/Footer.astro"
+import Header from "../components/layout/Header.astro"
+import { languages } from "../i18n"
+import '../styles/global.css'
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+type Lang = 'es' | 'en'
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props as Props
+const t = languages[lang]
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/image.png"/>
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={ "Portfolio de Adrian Camilo Osorio - Desarrollador Full Stack especializado en soluciones financieras y plataformas móviles."} />
+    <slot name="seo" />
+    <title>Adrian Camilo Osorio</title>
+  </head>
+  <body>
+    <Header lang={lang} nav={t.nav} />
+    <main>
+      <slot />
+    </main>
+    <Footer nav={t.nav} social={t.socialNetwork} links={t.footerLinks}/>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+
+interface HeroTexts {
+  hello: string
+  tagline: string
+  dev: string,
+  anio: string,
+  stats: {
+    numberProjects: string,
+    projects: string
+  }
+}
+
+const { t } = Astro.props as { t: HeroTexts }
+
+import adrianImage from '../../assets/images/adrian2.png';
+---
+
+<section class="relative overflow-hidden bg-white">
+  <div class="absolute left-4 top-0 hidden lg:grid h-full grid-rows-[auto_1fr_auto] items-center py-24 text-xs text-black/20">
+    <span class="rotate-180 [writing-mode:vertical-rl] tracking-widest">{t.anio}</span>
+    <div class="mx-auto w-px bg-black/10 h-full max-h-80"></div>
+    <span class="rotate-180 [writing-mode:vertical-rl] tracking-widest">{t.dev}</span>
+  </div>
+
+  <div class="relative mx-auto max-w-350 px-6 lg:px-24 pt-12 lg:pt-32">
+
+    <div class="relative lg:absolute lg:top-24 lg:left-24 flex justify-center lg:justify-start gap-20 text-black/80 mb-12 lg:mb-0">
+      <div class="text-center lg:text-left">
+        <p class="text-3xl font-medium"> {t.stats.numberProjects} </p>
+        <p class="text-xs text-black/50"> {t.stats.projects} </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:grid lg:grid-cols-[1fr_1.1fr] items-center lg:items-start gap-8 lg:gap-4">
+      
+      <div class="text-center lg:text-left lg:pt-32 order-1 lg:order-1">
+        <h2 class="text-[160px] leading-none font-light tracking-tight text-primary">
+          {t.hello}
+        </h2>
+        <p class="mt-6 text-sm text-secondary">
+        — {t.tagline}
+        </p>
+      </div>
+
+      <div class="w-full lg:w-max relative flex items-end justify-center lg:justify-end -mt-4 lg:-mt-20 order-2 lg:order-2">
+        <Image
+          src={adrianImage}
+          alt="Portrait of Adrian Camilo Osorio"
+          widths={[400, 600, 900]}
+          sizes="(max-width: 768px) 80vw, 600px"
+          loading="eager"
+          fetchpriority="high"
+          class="relative w-[85%] lg:w-full z-40 h-100 lg:h-[clamp(480px,90dvh,820px)] object-cover grayscale brightness-105"
+          format="webp"
+          quality={80} 
+        />
+        
+        <div class="absolute bottom-0 w-[90%] h-[70%] bg-[#F9F9F9] -z-10 rounded-t-full lg:hidden"></div>
+      </div>
+      
+    </div>
+  </div>
+</section>

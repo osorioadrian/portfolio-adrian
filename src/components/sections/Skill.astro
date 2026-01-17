@@ -1,0 +1,15 @@
+---
+const skills = ["HTML", "CSS", "Javascript", "Node.js", "Angular", "Git", "Spring Boot", "Astro", "Flutter"];
+---
+
+<section class="w-full bg-tertiary py-12 border-y border-white/1">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 md:gap-4">
+      {skills.map((skill) => (
+        <span class="text-black/70 hover:text-black transition-colors duration-300 text-sm md:text-base font-bold uppercase tracking-widest cursor-default">
+          {skill}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
