@@ -4,6 +4,8 @@ import Header from "../components/layout/Header.astro"
 import { languages } from "../i18n"
 import '../styles/global.css'
 
+const base = import.meta.env.BASE_URL
+
 type Lang = 'es' | 'en'
 interface Props {
   lang: Lang
@@ -18,7 +20,7 @@ const t = languages[lang]
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/image.png"/>
+    <link rel="icon" type="image/svg+xml" href="/image.png" href={`${base}image.png`}/>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={ "Portfolio de Adrian Camilo Osorio - Desarrollador Full Stack especializado en soluciones financieras y plataformas móviles."} />
     <slot name="seo" />
