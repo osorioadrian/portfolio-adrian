@@ -16,21 +16,21 @@ const t = languages[lang]
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/image.png"/>
+    <link rel="icon" type="image/png" href="image.png"/>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={ "Portfolio de Adrian Camilo Osorio - Desarrollador Full Stack especializado en soluciones financieras y plataformas móviles."} />
     <slot name="seo" />
     <title>Adrian Camilo Osorio</title>
   </head>
-  <body>
-    <Header nav={t.nav} />
+  <body class="bg-white antialiased">
+    <Header navLinks={t.navLinks} />
     <main>
       <slot />
     </main>
-    <Footer nav={t.nav} social={t.socialNetwork} links={t.footerLinks}/>
+    <Footer social={t.socialNetwork} links={t.footerLinks}/>
   </body>
 </html>
