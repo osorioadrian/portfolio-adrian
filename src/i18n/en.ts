@@ -94,6 +94,20 @@ export default {
       isSpecial: false,
     },
     {
+      company: "Grow Data",
+      date: "Feb 2024 – Oct 2024 | Feb 2025 – Jul 2025",
+      role: "Front-End Developer for the RUNTPRO web portal and dispatch sheet module",
+      tags: ["Angular", "TypeScript"],
+      isSpecial: false,
+    },
+    {
+      company: "Desarrollador Front-End | SoftManagement",
+      date: "September 2024 – January 2025",
+      role: "Mobile Software Developer for the RUNT citizen services platform",
+      tags: ["Flutter", "Dart"],
+      isSpecial: false,
+    },
+    {
       company: "Front-End Developer | Banco Popular",
       date: "November 2021 – September 2024",
       role: "Implemented scalable UI components for retail banking platforms, focusing on performance optimization and security standards.",
