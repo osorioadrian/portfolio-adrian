@@ -9,9 +9,11 @@ interface NavTexts {
 
 interface Props {
   navLinks: NavTexts[]
+  lang: 'es' | 'en'
 }
 
-const { navLinks } = Astro.props as Props
+const { navLinks, lang } = Astro.props as Props
+const base = import.meta.env.BASE_URL
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-black/5 bg-white">
@@ -44,14 +46,14 @@ const { navLinks } = Astro.props as Props
       <div class="flex items-center gap-2 md:gap-4">
         <div class="flex items-center">
           <a 
-            href={`portfolio-adrian/es/`} 
-            class={`p-2 text-xl transition-all `}
+            href={`${base}es/`} 
+            class={`p-2 text-xl transition-all ${lang === 'es' ? 'opacity-100' : 'opacity-30'}`}
           >
             🇪🇸
           </a>
           <a 
-            href={`portfolio-adrian/en/`} 
-            class={`p-2 text-xl transition-all`}
+            href={`${base}en/`} 
+            class={`p-2 text-xl transition-all ${lang === 'en' ? 'opacity-100' : 'opacity-30'}`}
           >
             🇺🇸
           </a>
