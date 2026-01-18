@@ -3,13 +3,24 @@ import runtProImage from "../assets/images/runtpro.png";
 import porcinappImage from "../assets/images/porcinapp.jpg";
 
 export default {
-  nav: {
-    home: "Inicio",
-    about: "Sobre mí",
-    project: "Proyectos",
-    contact: "Contacto",
-    email: "osorioadriancamilo@gmail.com",
-  },
+  navLinks: [
+    {
+      name: "Inicio",
+      href: "#home",
+    },
+    {
+      name: "Sobre mí",
+      href: "#about",
+    },
+    {
+      name: "Proyectos",
+      href: "#project",
+    },
+    {
+      name: "Contacto",
+      href: "#contact",
+    },
+  ],
   hero: {
     hello: "Hola",
     tagline: "Soy Adrian, Desarrollador de Software",
