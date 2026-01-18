@@ -94,6 +94,20 @@ export default {
       isSpecial: false,
     },
     {
+      company: "Desarrollador Front-End | Grow Data",
+      date: "Feb 2024 – Oct 2024 | Feb 2025 – Jul 2025",
+      role: "Desarrollador Front-End Angular: Portal RUNTPRO y módulo de planilla de despacho",
+      tags: ["Angular", "TypeScript"],
+      isSpecial: false,
+    },
+    {
+      company: "Desarrollador Front-End | SoftManagement",
+      date: "Septiembre 2024 – Enero 2025",
+      role: "Desarrollador Mobile Flutter para la plataforma de trámites ciudadanos del RUNT",
+      tags: ["Flutter", "Dart"],
+      isSpecial: false,
+    },
+    {
       company: "Desarrollador Front-End | Banco Popular",
       date: "Noviembre 2021 – Septiembre 2024",
       role: "Implementación de componentes de UI escalables para plataformas de banca retail, con foco en optimización de rendimiento y estándares de seguridad.",
