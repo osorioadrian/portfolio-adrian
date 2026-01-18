@@ -12,6 +12,6 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   redirects: {
-    '/': '/es/',
-  }
+    "/": "/portfolio-adrian/es",
+  },
 });
