@@ -1,8 +1,4 @@
 ---
-interface NavTexts {
-  email: string
-}
-
 interface SocialNetwork {
   title: string
   url: string
@@ -15,12 +11,11 @@ interface FooterLink {
 }
 
 interface Props {
-  nav: NavTexts
   social: SocialNetwork[]
   links: FooterLink[]
 }
 
-const { nav, social, links } = Astro.props as Props
+const { social, links } = Astro.props as Props
 ---
 
 <footer class="bg-[#181818] py-10 px-6 md:px-24 border-t border-white/5 relative overflow-hidden">
@@ -46,7 +41,7 @@ const { nav, social, links } = Astro.props as Props
       <span
         class="text-xl md:text-4xl font-light text-white tracking-tight hover:opacity-70 transition-opacity break-all md:break-normal"
       >
-        {nav.email}
+        osorioadriancamilo@gmail.com
       </span>
       <div class="absolute -bottom-2 left-0 w-0 h-px bg-white/20 transition-all duration-500 group-hover:w-full"></div>
     </div>
